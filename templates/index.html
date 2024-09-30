@@ -14,13 +14,16 @@
             {% for todo in todos %}
             <div class="card mt-4">
                 <div class="card-header">
-                    {{ todo.get_status_display }}
+                  {{ todo.get_status_display }}
+                </div>
+                <div class="card-header">
+                  <h6 style="color: red">Deadline: {{ todo.deadline }}</h6>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ todo.title }}</h5>
                     <p class="card-text">{{ todo.content }}</p>
                     <a href="/edit/{{ todo.id }}/" class="btn btn-success">Edit</a>
-                    <a href="/delete/{{ todo.id }}/" class="btn btn-danger">Delete</a>
+{#                    <a href="/delete/{{ todo.id }}/" class="btn btn-danger">Delete</a>#}
                 </div>
                 <div class="card-footer text-muted">
                     {{ todo.created_at }}

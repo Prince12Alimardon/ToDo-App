@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def index(request):
     user = request.user
-    todos = Todo.objects.filter(author=user)
+    todos = Todo.objects.filter(author=user).order_by('-id')
     obj = request.GET.get('a')
     if obj:
         todos = todos.filter(status__exact=obj)

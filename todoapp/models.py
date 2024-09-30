@@ -7,7 +7,7 @@ User = get_user_model()
 STATUS = (
     (0, 'New'),
     (1, 'Process'),
-    (2, 'Complated'),
+    (2, 'Completed'),
     (3, 'Cancelled'),
 )
 
@@ -17,6 +17,7 @@ class Todo(models.Model):
     title = models.CharField(max_length=221)
     content = models.TextField()
     status = models.IntegerField(choices=STATUS)
+    deadline = models.CharField(max_length=212)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
